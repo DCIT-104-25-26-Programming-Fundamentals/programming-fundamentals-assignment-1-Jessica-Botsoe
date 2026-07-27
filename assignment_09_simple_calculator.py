@@ -68,3 +68,105 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+
+def add(first, second):
+    """Add the two numbers together."""
+    answer = first + second
+    return answer
+
+
+def subtract(first, second):
+    """Take the second number away from the first one."""
+    answer = first - second
+    return answer
+
+
+def multiply(first, second):
+    """Multiply the two numbers."""
+    answer = first * second
+    return answer
+
+
+def divide(first, second):
+    """Divide the first number by the second one."""
+    answer = first / second
+    return round(answer, 2)
+
+
+def modulus(first, second):
+    """Find the remainder when the first number is divided by the second."""
+    answer = first % second
+    return answer
+
+
+def power(first, second):
+    """Raise the first number to the power of the second one."""
+    answer = first ** second
+    return answer
+
+
+def display_menu():
+    """Print the calculator menu."""
+    print()
+    print("============================")
+    print("     SIMPLE CALCULATOR")
+    print("============================")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Modulus")
+    print("6. Exponentiation")
+    print("7. Quit")
+
+
+def main():
+    while True:
+        display_menu()
+        choice = input("Select an operation (1-7): ")
+
+        if choice == "7":
+            print("Goodbye!")
+            break
+
+        if choice not in ["1", "2", "3", "4", "5", "6"]:
+            print("Error: Invalid choice. Please enter a number from 1 to 7.")
+            continue
+
+        first = int(input("Enter first number : "))
+        second = int(input("Enter second number: "))
+
+        if choice == "1":
+            answer = add(first, second)
+            print(f"Result: {first} + {second} = {answer}")
+
+        elif choice == "2":
+            answer = subtract(first, second)
+            print(f"Result: {first} - {second} = {answer}")
+
+        elif choice == "3":
+            answer = multiply(first, second)
+            print(f"Result: {first} * {second} = {answer}")
+
+        elif choice == "4":
+            # we cannot divide a number by zero
+            if second == 0:
+                print("Error: Cannot divide by zero.")
+            else:
+                answer = divide(first, second)
+                print(f"Result: {first} / {second} = {answer}")
+
+        elif choice == "5":
+            if second == 0:
+                print("Error: Cannot divide by zero.")
+            else:
+                answer = modulus(first, second)
+                print(f"Result: {first} % {second} = {answer}")
+
+        elif choice == "6":
+            answer = power(first, second)
+            print(f"Result: {first} ** {second} = {answer}")
+
+
+main()
+
