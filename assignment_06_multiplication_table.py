@@ -55,3 +55,32 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+EPARATOR = "---------------------------"
+
+
+def print_single_table(number):
+    """PART A - print the 1 to 12 times table for one number."""
+    print(f"Multiplication Table for {number}:")
+    for i in range(1, 13):
+        answer = number * i
+        print(number, " x ", i, " = ", answer)
+
+
+def print_tables_up_to(limit):
+    """PART B - print a table for every number from 1 up to N."""
+    for number in range(1, limit + 1):
+        print_single_table(number)
+        # do not print a separator after the last table
+        if number != limit:
+            print(SEPARATOR)
+
+
+def main():
+    # ---------------- PART A ----------------
+    number = int(input("Enter a number: "))
+
+    if number <= 0:
+        print("Error: Please enter a positive whole number.")
+        return
+
+    print()

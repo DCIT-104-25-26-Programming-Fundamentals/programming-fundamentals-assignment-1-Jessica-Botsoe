@@ -39,3 +39,64 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def calculate_sum(numbers):
+    """Add up all the numbers in the list."""
+    total = 0
+    for number in numbers:
+        total = total + number
+    return total
+
+
+def calculate_average(numbers):
+    """Divide the total by how many numbers there are."""
+    total = calculate_sum(numbers)
+    average = total / len(numbers)
+    return round(average, 2)
+
+
+def find_maximum(numbers):
+    """Find the biggest number in the list."""
+    biggest = numbers[0]
+    for number in numbers:
+        if number > biggest:
+            biggest = number
+    return biggest
+
+
+def find_minimum(numbers):
+    """Find the smallest number in the list."""
+    smallest = numbers[0]
+    for number in numbers:
+        if number < smallest:
+            smallest = number
+    return smallest
+
+
+def read_numbers(how_many):
+    """Ask the user for the numbers and put them in a list."""
+    numbers = []
+    for i in range(how_many):
+        number = int(input(f"Enter number {i + 1}: "))
+        numbers.append(number)
+    return numbers
+
+
+def main():
+    count = int(input("How many numbers? "))
+
+    if count <= 0:
+        print("Error: N must be a positive integer.")
+        return
+
+    numbers = read_numbers(count)
+
+    print()
+    print("Results:")
+    print("Sum:    ", calculate_sum(numbers))
+    print("Average:", calculate_average(numbers))
+    print("Maximum:", find_maximum(numbers))
+    print("Minimum:", find_minimum(numbers))
+
+
+main()
+
