@@ -36,19 +36,27 @@
 # =============================================================================
 
 def is_prime(number):
-    if number <2:
+    """Return True if the number is prime, otherwise False."""
+    # 0, 1 and negative numbers are not prime
+    if number < 2:
         return False
 
-    for i in range(2,number):
-        if number%i== 0:
+    # try dividing by 2, 3, 4 ... up to one less than the number
+    for divisor in range(2, number):
+        if number % divisor == 0:
             return False
 
-        return True
+    return True
 
-    number= int(input("Enter a number"))
+
+def main():
+    number = int(input("Enter a number: "))
 
     if is_prime(number):
-        print(f"{number} is a prime number")
+        print(f"{number} is a prime number.")
     else:
-        print(f"{number} is NOT a prime number")
+        print(f"{number} is NOT a prime number.")
+
+
+main()
 
